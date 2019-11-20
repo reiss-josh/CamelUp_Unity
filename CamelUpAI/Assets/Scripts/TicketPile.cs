@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CamelScript : MonoBehaviour
+public class TicketPile : MonoBehaviour
 {
+    List<Ticket> myTickets = new List<Ticket>();
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,15 @@ public class CamelScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void RefillPile()
+    {
+
+    }
+
+    Ticket DrawTicket()
+    {
+        return null;
     }
 }
