@@ -3,14 +3,14 @@
 Scripts/GameMaster.cs
 *   Scriptable object
 *   manages the game
-*   contains a list of player objeccts
-*   contains a list of camel objects
-*   contains a list of Ticket Pile objects (which contain lists of Ticket objects)
-*   contains a list of pointers to Die objects
-*   contains two CardPile objects (which contain lists of cards)
-*   contains a reference to the roll chips [NOT YET IMPLEMENTED]
-*   keeps track of each tile's location [NOT YET IMPLEMENTED]
---> maybe there is a "GameBoard" object which keeps track of tiles + camel locations?
+*   contains a dictionary of camel objects
+*   contains a dictionary of player objects
+*	contains a list of pointers to Ticket Piles
+*   contains a list of pointers to Die objects (acquired from Pyramid object)
+*   contains two pointers to CardPile objects (which contain lists of betted cards)
+*	contains a pointer to a TicketPile object -- the pile of five Roll chips
+*	contains a pointer to a Pyramid object
+*	contains a pointer to a GameBoard object
 ```
 ```
 Scripts/Camel.cs
@@ -21,6 +21,12 @@ Scripts/Camel.cs
 *   has void MoveCamel(int) method
 ```
 ```
+Scripts/Board.cs
+*	keeps track of where everything is (tiles, camels, etc)
+*	holds a bunch of Vector3s [e.g. a Vector3 for each space on the track]
+*	is "dumb"
+```
+```
 Scripts/Card.cs
 *   contains logic for cards
 *   remembers original owner and color
@@ -29,6 +35,7 @@ Scripts/Card.cs
 Scripts/CardPile.cs
 *   contains logic for piles of cards -- used for the winner/loser bets
 *   keeps track of which pile it is, how many cards are in it, etc.
+*	can have a card Added to it or can give itself back for scoring
 ```
 ```
 Scripts/Player.cs
@@ -43,6 +50,7 @@ Scripts/Pyramid.cs
 *   performs roll animation
 *   Gamemaster.cs calls "rollDie()" to roll a new die
 *   Gamemaster.cs calls "returnDice()" to return all dice to the pyramid
+*	contains a list of dice called diceList which knows where all the dice are
 ```
 ```
 Scripts/Struple.cs
@@ -59,9 +67,15 @@ Scripts/TicketPile.cs
 *   Stores ticket objects
 *   remembers how many tickets are left, highest value ticket in the pile, and what color they are
 ```
-...
-...
-...
+.
+
+.
+
+.
+```
+Prefabs/GameBoard
+*	its the game board.
+```
 ```
 Prefabs/BaseCamel
 *   is prefab from which all camels are variants
