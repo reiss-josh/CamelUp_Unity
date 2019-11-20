@@ -1,34 +1,67 @@
 # CamelUp_Unity
 ```
-* GAMEMASTER.cs IN SPECIFICS:
-*   contains a list of players and their data (owned tickets, current money, card hand, whether tile has been played)
-*   contains two lists for the two piles of played cards
-*   contains five lists for the piles of tickets
-*   stores list of dice rolled/not rolles
-*   keeps track of how many die roll tiles are left
-*   stores current location of all camels and played tiles
-*   performs camel movement (?)
-```
-
-```
 Scripts/GameMaster.cs
 *   Scriptable object
 *   manages the game
-*   moves the camels, tracks player turns, etc.
+*   contains a list of player objeccts
+*   contains a list of camel objects
+*   contains a list of Ticket Pile objects (which contain lists of Ticket objects)
+*   contains a list of pointers to Die objects
+*   contains two CardPile objects (which contain lists of cards)
+*   contains a reference to the roll chips [NOT YET IMPLEMENTED]
+*   keeps track of each tile's location [NOT YET IMPLEMENTED]
+--> maybe there is a "GameBoard" object which keeps track of tiles + camel locations?
 ```
 ```
-Scripts/CamelScript.cs
+Scripts/Camel.cs
 *   moves camels
 *   black/white camels inherit from this class
-*   Gamemaster.cs calls "redCamel.Move(2)" to move red camel 2 spaces, for example
+*   Gamemaster.cs calls "redCamel.MoveCamel(2)" to move red camel 2 spaces, for example
+*   keeps track of camel color, position, height, and what camel is below it
+*   has void MoveCamel(int) method
 ```
 ```
-Scripts/PyramidScript.cs
+Scripts/Card.cs
+*   contains logic for cards
+*   remembers original owner and color
+```
+```
+Scripts/CardPile.cs
+*   contains logic for piles of cards -- used for the winner/loser bets
+*   keeps track of which pile it is, how many cards are in it, etc.
+```
+```
+Scripts/Player.cs
+*   scripting for players
+*   contains all relevant information for a single player
+*   gets attached to Player prefab
+*   has methods like ReturnTickets(), TakeTicket(), etc
+```
+```
+Scripts/Pyramid.cs
 *   rolls dice
 *   performs roll animation
 *   Gamemaster.cs calls "rollDie()" to roll a new die
 *   Gamemaster.cs calls "returnDice()" to return all dice to the pyramid
 ```
+```
+Scripts/Struple.cs
+*   String Tuple!
+*   C# doesn't support string tuples and i wanted a struct that just contains an int and a string
+```
+```
+Scripts/Ticket.cs
+*   Contains logic for tickets
+*   remembers ticket value and ticket color
+```
+```
+Scripts/TicketPile.cs
+*   Stores ticket objects
+*   remembers how many tickets are left, highest value ticket in the pile, and what color they are
+```
+...
+...
+...
 ```
 Prefabs/BaseCamel
 *   is prefab from which all camels are variants
