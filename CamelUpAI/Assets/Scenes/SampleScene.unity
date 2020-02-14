@@ -304,7 +304,7 @@ PrefabInstance:
     - target: {fileID: 4472378321281585484, guid: a59b6060e11a94b49bbe091858b2abd1,
         type: 3}
       propertyPath: m_Name
-      value: GameBoard
+      value: Board
       objectReference: {fileID: 0}
     - target: {fileID: 4472378321281585480, guid: a59b6060e11a94b49bbe091858b2abd1,
         type: 3}
@@ -363,3 +363,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a59b6060e11a94b49bbe091858b2abd1, type: 3}
+--- !u!1 &4472378322049061917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4472378321281585484, guid: a59b6060e11a94b49bbe091858b2abd1,
+    type: 3}
+  m_PrefabInstance: {fileID: 4472378322049061916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4472378322049061918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4472378322049061917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60066d996ecf4845b42d2b4b16aecd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
